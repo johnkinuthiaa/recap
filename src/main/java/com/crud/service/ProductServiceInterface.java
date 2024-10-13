@@ -8,4 +8,5 @@ public interface ProductServiceInterface {
     List<Products> getAllProducts();
     List<Products> getProductByName(String name);
     Products createNewProduct(Products products);
+    Products updateExistingProduct(Products product);
 }

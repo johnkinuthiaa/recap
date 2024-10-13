@@ -43,4 +43,21 @@ public class ProductService implements ProductServiceInterface{
         }
         return products;
     }
+    @Override
+    public Products updateExistingProduct(Products product){
+        Products products =new Products();
+        try{
+            if(repository.findById(product.getId()).isPresent()){
+                repository.deleteById(product.getId());
+                products.setProductName(product.getProductName());
+                products.setDescription(product.getDescription());
+                products.setStatus(product.getStatus());
+                products.setCreatedOn(LocalDateTime.now());
+                repository.save(products);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return products;
+    }
 }

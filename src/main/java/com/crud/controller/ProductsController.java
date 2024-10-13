@@ -23,4 +23,8 @@ public class ProductsController {
     public ResponseEntity<List<Products>> getAllProducts(){
         return ResponseEntity.ok(service.getAllProducts());
     }
+    @PutMapping("/update")
+    public ResponseEntity<Products> updateExistingProduct(@RequestBody Products product){
+        return ResponseEntity.ok(service.updateExistingProduct(product));
+    }
 }
