@@ -27,4 +27,8 @@ public class ProductsController {
     public ResponseEntity<Products> updateExistingProduct(@RequestBody Products product){
         return ResponseEntity.ok(service.updateExistingProduct(product));
     }
+    @DeleteMapping("/delete/id")
+    public void deleteProductById(@RequestParam Long id){
+        service.deleteProductById(id);
+    }
 }

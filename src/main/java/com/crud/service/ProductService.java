@@ -60,4 +60,12 @@ public class ProductService implements ProductServiceInterface{
         }
         return products;
     }
+    @Override
+    public  void deleteProductById(Long id){
+        if(repository.findById(id).isPresent()){
+            repository.deleteById(id);
+        }else{
+            throw new RuntimeException("item with id 1 not found");
+        }
+    }
 }

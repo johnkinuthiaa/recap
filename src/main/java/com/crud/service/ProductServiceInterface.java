@@ -9,4 +9,5 @@ public interface ProductServiceInterface {
     List<Products> getProductByName(String name);
     Products createNewProduct(Products products);
     Products updateExistingProduct(Products product);
+    void deleteProductById(Long id);
 }
